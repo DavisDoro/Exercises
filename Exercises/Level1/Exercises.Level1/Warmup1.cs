@@ -18,7 +18,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool SleepIn(bool weekday, bool vacation)
         {
-            throw new NotImplementedException();
+            if ( vacation == true )
+                {
+                    return true;
+                }
+            else if (weekday == false)
+                {
+                    return true;
+                }
+            else
+                {
+                    return false;
+                }
             //upload test
         }
 
@@ -34,8 +45,20 @@ namespace Exercises.Level1
         /// </summary>
         public bool MonkeyTrouble(bool aSmile, bool bSmile)
         {
-            throw new NotImplementedException();
+            if (aSmile == true && bSmile == true)
+            {
+                return true;
+            }
+            else if (aSmile == false && bSmile == false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
 
         /// <summary>
         /// 
@@ -47,7 +70,14 @@ namespace Exercises.Level1
         /// </summary>
         public int SumDouble(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a == b)
+            {
+                return (a+b)*2;
+            }
+            else
+            {
+                return a+b;
+            }
         }
 
         /// <summary>
