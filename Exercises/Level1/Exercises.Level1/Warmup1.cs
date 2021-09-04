@@ -18,11 +18,7 @@ namespace Exercises.Level1
         /// </summary>
         public bool SleepIn(bool weekday, bool vacation)
         {
-            if ( vacation == true )
-                {
-                    return true;
-                }
-            else if (weekday == false)
+            if ( vacation == true || weekday == false)
                 {
                     return true;
                 }
@@ -90,7 +86,15 @@ namespace Exercises.Level1
         /// </summary>
         public int Diff21(int n)
         {
-            throw new NotImplementedException();
+            if (n < 21)
+            {
+                return 21 - n;
+            }
+            else
+            {
+                int diff =  (21 - n)*2;
+                return Math.Abs(diff);
+            }
         }
 
         /// <summary>
@@ -102,10 +106,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool ParrotTrouble(bool talking, int hour)
         {
-            throw new NotImplementedException();
+            if (talking == true && (hour < 7 || hour > 20))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        /// <summary>
+
+{        /// <summary>
         /// Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
         /// 
         /// makes10(9, 10) → true
@@ -114,7 +126,14 @@ namespace Exercises.Level1
         /// </summary>
         public bool Makes10(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a == 10 || b == 10 || a + b == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -127,6 +146,7 @@ namespace Exercises.Level1
         public bool NearHundred(int n)
         {
             throw new NotImplementedException();
+
         }
 
         /// <summary>
@@ -139,7 +159,15 @@ namespace Exercises.Level1
         /// </summary>
         public bool PosNeg(int a, int b, bool negative)
         {
-            throw new NotImplementedException();
+            if ((a == 0 || b == 0) || (a == 0 && b == 0 && negative == true))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         /// <summary>
