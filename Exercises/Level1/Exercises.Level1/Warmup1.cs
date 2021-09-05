@@ -145,7 +145,20 @@ namespace Exercises.Level1
         /// </summary>
         public bool NearHundred(int n)
         {
-            throw new NotImplementedException();
+            
+            if (Math.Abs(100-n) < 11)
+            {
+                return true;
+            }
+            else if (Math.Abs(200-n) < 11)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+             
 
         }
 

@@ -3,7 +3,8 @@
     "",
     "\\Exercises",
     "\\Exercises\\Level1",
-    "\\Exercises\\Level1\\Exercises.Level1"
+    "\\Exercises\\Level1\\Exercises.Level1",
+    "\\Exercises\\Level1\\Exercises.Level1.Tests"
   ],
   "SelectedNode": "\\Exercises\\Level1\\Exercises.Level1\\Warmup1.cs",
   "PreviewInSolutionExplorer": false
