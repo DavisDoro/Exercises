@@ -466,8 +466,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool MixStart(string str)
         {
-            throw new NotImplementedException();
+            string checkString = str.Remove(0, 1);
+            checkString = checkString.Remove(2);
+            if (checkString == "ix")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
 
         /// <summary>
         /// Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
@@ -478,7 +488,27 @@ namespace Exercises.Level1
         /// </summary>
         public string StartOz(string str)
         {
-            throw new NotImplementedException();
+            str = str.Remove(2);
+            char firstLetter = str[0];
+            char secondLetter = str[1];
+            string firstString = firstLetter.ToString();
+            string secondString = secondLetter.ToString();
+            if (firstString == "o" && secondString == "z")
+            {
+                return "oz";
+            }
+            else if (firstString == "o")
+            {
+                return "o";
+            }
+            else if (secondString == "z")
+            {
+                return "z";
+            }
+            else
+            {
+                return "";
+            }
         }
 
         /// <summary>
@@ -490,7 +520,8 @@ namespace Exercises.Level1
         /// </summary>
         public int IntMax(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            int maxValue = Math.Max(a, Math.Max(b, c);
+            return maxValue;
         }
 
         /// <summary>
@@ -503,7 +534,21 @@ namespace Exercises.Level1
         /// </summary>
         public int Close10(int a, int b)
         {
-            throw new NotImplementedException();
+            int aHowClose = Math.Abs(a - 10);
+            int bHowClose = Math.Abs(b - 10);
+
+            if (aHowClose < bHowClose)
+            {
+                return a;
+            }
+            else if (aHowClose == bHowClose)
+            {
+                return "0";
+            }
+            else
+            {
+                return b;
+            }
         }
 
         /// <summary>
