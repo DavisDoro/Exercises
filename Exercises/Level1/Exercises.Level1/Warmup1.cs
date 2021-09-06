@@ -193,7 +193,15 @@ namespace Exercises.Level1
         /// </summary>
         public string NotString(string str)
         {
-            throw new NotImplementedException();
+            if (str.Substring(0, 4) == "not ")
+            {
+                return str;
+            }
+            else
+            {
+                str = "not " + str;
+                return str;
+            }
         }
 
         /// <summary>
@@ -206,7 +214,8 @@ namespace Exercises.Level1
         /// </summary>
         public string MissingChar(string str, int n)
         {
-            throw new NotImplementedException();
+            str = str.Remove(n, 1);
+            return str;
         }
 
         /// <summary>
@@ -218,7 +227,18 @@ namespace Exercises.Level1
         /// </summary>
         public string FrontBack(string str)
         {
-            throw new NotImplementedException();
+            // get string length
+            int charCount = str.Length;
+            // get first and last char from string
+            char firstChar = str[0];
+            char lastChar = str[charCount - 1];
+            //remove first and last from original string
+            str = str.Remove(0, 1);
+            str = str.Remove(charCount -2, 1);
+            //swap
+            string newString = lastChar.ToString() + str + firstChar.ToString();
+
+            return newString;
         }
 
         /// <summary>
@@ -231,7 +251,18 @@ namespace Exercises.Level1
         /// </summary>
         public string Front3(string str)
         {
-            throw new NotImplementedException();
+            int strLength = str.Length;
+            // if 2 char string
+            if (strLength < 3)
+            {
+                return str + str + str;
+            }
+            // if 3+ char string
+            else
+            {
+                str = str.Remove(3);
+                return str + str + str;
+            }
         }
 
         /// <summary>
@@ -243,7 +274,15 @@ namespace Exercises.Level1
         /// </summary>
         public string BackAround(string str)
         {
-            throw new NotImplementedException();
+            // get string length
+            int charCount = str.Length;
+            // get last char from string
+            char lastChar = str[charCount - 1];
+
+            //swap
+            string newString = lastChar.ToString() + str + lastChar.ToString();
+
+            return newString;
         }
 
         /// <summary>
@@ -256,7 +295,14 @@ namespace Exercises.Level1
         /// </summary>
         public bool Or35(int n)
         {
-            throw new NotImplementedException();
+            if ((n % 5 == 0) || (n % 3 == 0))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -269,7 +315,9 @@ namespace Exercises.Level1
         /// </summary>
         public string Front22(string str)
         {
-            throw new NotImplementedException();
+            string beginning = str.Remove(2);
+
+            return beginning + str + beginning;
         }
 
         /// <summary>
@@ -281,7 +329,14 @@ namespace Exercises.Level1
         /// </summary>
         public bool StartHi(string str)
         {
-            throw new NotImplementedException();
+            if (str.Remove(2) == "hi")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -293,7 +348,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool IcyHot(int temp1, int temp2)
         {
-            throw new NotImplementedException();
+            if (temp1 < 0 && temp2 > 100)
+            {
+                return true;
+            }
+            else if (temp1 > 100 && temp2 < 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -305,7 +371,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool In1020(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a >= 10 && a <= 20)
+            {
+                return true;
+            }
+            else if (b >= 10 && b <= 20)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -318,7 +395,22 @@ namespace Exercises.Level1
         /// </summary>
         public bool HasTeen(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (a >= 13 && a <= 19)
+            {
+                return true;
+            }
+            if (b >= 13 && b <= 19)
+            {
+                return true;
+            }
+            if (c >= 13 && c <= 19)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -330,7 +422,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool LoneTeen(int a, int b)
         {
-            throw new NotImplementedException();
+            if ((a >= 13 && a <= 19) && (b < 13 || b > 19))
+            {
+                return true;
+            }
+            else if ((b >= 13 && b <= 19) && (a < 13 || a > 19))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -342,7 +445,16 @@ namespace Exercises.Level1
         /// </summary>
         public string DelDel(string str)
         {
-            throw new NotImplementedException();
+            //remove beginning and end of the string
+            string isDel = str.Remove(0, 1);
+            isDel = str.Remove(3);
+
+            //compare new string to "del"
+            if (isDel = "del")
+            {
+                //remove "del" from string
+                return str.Remove(1, 3);
+            }
         }
 
         /// <summary>
