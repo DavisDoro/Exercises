@@ -572,8 +572,24 @@ namespace Exercises.Level1
         /// </summary>
         public int Max1020(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a >= 10 && a <=20)&&(b >= 10 && b <=20)
+             {
+                return Math.Max(a, b);
+            }
+            else if ((a >= 10 && a <=20)
+                {
+                return a;
+            }
+            else if ((b >= 10 && b <=20)
+                {
+                return b;
+            }
+            else
+            {
+                return 0;
+            }
         }
+
 
         /// <summary>
         /// Return true if the given string contains between 1 and 3 'e' chars.
@@ -584,8 +600,24 @@ namespace Exercises.Level1
         /// </summary>
         public bool StringE(string str)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            foreach(char ch in str)
+            {
+                if(ch.Equals('e'))
+                {
+                    count ++;
+                }
+            }
+            if (count > 0 && count <=3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
 
         /// <summary>
         /// Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
@@ -596,7 +628,14 @@ namespace Exercises.Level1
         /// </summary>
         public bool LastDigit(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a % 10 == b % 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -609,7 +648,22 @@ namespace Exercises.Level1
         /// </summary>
         public string EndUp(string str)
         {
-            throw new NotImplementedException();
+            int strLength = str.Length;
+            //cut string into two parts
+            string startOfStr = str.Remove(strLength-3);
+            string endOfStr = str.Remove(0, strLength-3);
+
+            
+
+            if (strLength <= 3)
+            {
+                return str.ToUpper();
+            }
+            else
+            {
+                return startOfStr + endOfStr.ToUpper();
+            }
+
         }
 
         /// <summary>
@@ -621,7 +675,17 @@ namespace Exercises.Level1
         /// </summary>
         public string EveryNth(string str, int n)
         {
-            throw new NotImplementedException();
+            string newString = "";
+            int plusInt = n;
+            int i = 0;
+            while (str.Length > n)
+            {
+
+                newString = newString + str[i];
+                n = n + plusInt;
+                i = i + plusInt;
+            }
+            return newString;
         }
     }
 }
