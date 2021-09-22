@@ -117,7 +117,7 @@ namespace Exercises.Level1
         }
 
 
-{        /// <summary>
+        /// <summary>
         /// Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
         /// 
         /// makes10(9, 10) → true
@@ -253,7 +253,7 @@ namespace Exercises.Level1
         {
             int strLength = str.Length;
             // if 2 char string
-            if (strLength < 3)
+            if (strLength <= 3)
             {
                 return str + str + str;
             }
@@ -450,11 +450,12 @@ namespace Exercises.Level1
             isDel = str.Remove(3);
 
             //compare new string to "del"
-            if (isDel = "del")
+            if (isDel == "del")
             {
                 //remove "del" from string
-                return str.Remove(1, 3);
+                return "";
             }
+            return "";
         }
 
         /// <summary>
@@ -520,7 +521,7 @@ namespace Exercises.Level1
         /// </summary>
         public int IntMax(int a, int b, int c)
         {
-            int maxValue = Math.Max(a, Math.Max(b, c);
+            int maxValue = Math.Max(a, Math.Max(b, c));
             return maxValue;
         }
 
@@ -543,7 +544,7 @@ namespace Exercises.Level1
             }
             else if (aHowClose == bHowClose)
             {
-                return "0";
+                return 0;
             }
             else
             {
@@ -572,15 +573,15 @@ namespace Exercises.Level1
         /// </summary>
         public int Max1020(int a, int b)
         {
-            if (a >= 10 && a <=20)&&(b >= 10 && b <=20)
+            if ((a >= 10 && a <=20)&&(b >= 10 && b <=20))
              {
                 return Math.Max(a, b);
             }
-            else if ((a >= 10 && a <=20)
+            else if ((a >= 10 && a <=20))
                 {
                 return a;
             }
-            else if ((b >= 10 && b <=20)
+            else if ((b >= 10 && b <=20))
                 {
                 return b;
             }

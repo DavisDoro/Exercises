@@ -19,7 +19,7 @@ namespace Exercises.Level1
         /// </summary>
         public bool CigarParty(int cigars, bool isWeekend)
         {
-            if (isWeekend = true && cigars >= 40)
+            if (isWeekend && cigars >= 40)
             {
                 return true;
             }
@@ -72,18 +72,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool SquirrelPlay(int temp, bool isSummer)
         {
-            if (temp > 60 && temp <= 90)
+           
+            int maxTemp = 90;
+
+            if(isSummer)
+            {
+                maxTemp += 10;
+            }
+            if (temp >= 60 && temp <= maxTemp)
             {
                 return true;
             }
-            else if (temp > 60 && temp <= 100 && isSummer)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Exercises.Level1
         /// </summary>
         public int CaughtSpeeding(int speed, bool isBirthday)
         {
-            if ((speed >60 && speed <= 80 && !isBirthday) || (speed >65 && speed <= 85))
+            if ((speed >60 && speed <= 80 && !isBirthday) || (speed >65 && speed <= 85) && isBirthday)
             {
                 return 1;
             }
@@ -123,7 +123,12 @@ namespace Exercises.Level1
         /// </summary>
         public int SortaSum(int a, int b)
         {
-            throw new NotImplementedException();
+            int sum = a+b;
+
+            if (sum >= 10 && sum <= 19)
+                sum = 20;
+            
+            return sum;
         }
 
         /// <summary>
@@ -139,7 +144,24 @@ namespace Exercises.Level1
         /// </summary>
         public string AlarmClock(int day, bool vacation)
         {
-            throw new NotImplementedException();
+
+            if (vacation && (day > 0 && day < 6))
+            {
+                    return "10:00";
+            }
+            else if (vacation)
+            {
+                return "off";
+            }
+            else if (day > 0 && day < 6)
+            {
+                return "7:00";
+            }
+            else
+            {
+                return "10:00";
+            }
+   
         }
 
         /// <summary>
@@ -153,7 +175,19 @@ namespace Exercises.Level1
         /// </summary>
         public bool Love6(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a == 6 || b == 6)
+            {
+                return true;
+            }
+            else if ((a + b) == 6 || (a - b) == 6 || (b - a) == 6)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         /// <summary>
@@ -167,7 +201,24 @@ namespace Exercises.Level1
         /// </summary>
         public bool In1To10(int n, bool outsideMode)
         {
-            throw new NotImplementedException();
+
+            if (outsideMode && (n <= 1 || n >= 10))
+            {
+                return true;
+            }
+            else if (outsideMode)
+            {
+                return false;
+            }
+            else if (n >= 1 && n <= 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         /// <summary>
@@ -180,7 +231,11 @@ namespace Exercises.Level1
         /// </summary>
         public bool SpecialEleven(int n)
         {
-            throw new NotImplementedException();
+            if ((n % 11) <= 1 && (n % 11) >= -1)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -193,7 +248,13 @@ namespace Exercises.Level1
         /// </summary>
         public bool More20(int n)
         {
-            throw new NotImplementedException();
+            if ((n % 20) == 1 || (n % 20) == 2)
+            {
+                return true;
+            }
+
+            return false;
+
         }
 
         /// <summary>
@@ -206,7 +267,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool Old35(int n)
         {
-            throw new NotImplementedException();
+            if ((n % 3 == 0) == (n % 5 == 0))
+            {
+                return false;
+            }
+            else if (n % 3 == 0 || n % 5 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -220,7 +292,12 @@ namespace Exercises.Level1
         /// </summary>
         public bool Less20(int n)
         {
-            throw new NotImplementedException();
+            if ((n % 20) == 18 || (n % 20) == 19)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -234,7 +311,12 @@ namespace Exercises.Level1
         /// </summary>
         public bool NearTen(int num)
         {
-            throw new NotImplementedException();
+            if ((num % 10) >= 8 || (num % 10) <= 2)
+            {
+                return true;
+            }
+
+                return false;
         }
 
         /// <summary>
@@ -247,7 +329,13 @@ namespace Exercises.Level1
         /// </summary>
         public int TeenSum(int a, int b)
         {
-            throw new NotImplementedException();
+            int sum = a + b;
+
+            if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19))
+
+                return 19;
+            else
+                return sum;
         }
 
         /// <summary>
@@ -261,7 +349,22 @@ namespace Exercises.Level1
         /// </summary>
         public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            throw new NotImplementedException();
+            if (isAsleep)
+            {
+                return false;
+            }
+            else if (isMorning && isMom)
+            {
+                return true;
+            }
+            else if (isMorning)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>
