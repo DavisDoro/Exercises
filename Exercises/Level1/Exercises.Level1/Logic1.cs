@@ -19,7 +19,17 @@ namespace Exercises.Level1
         /// </summary>
         public bool CigarParty(int cigars, bool isWeekend)
         {
-            throw new NotImplementedException();
+            if (isWeekend = true && cigars >= 40)
+            {
+                return true;
+            }
+            else if (cigars >= 40 && cigars <=60) {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -36,7 +46,18 @@ namespace Exercises.Level1
         /// </summary>
         public int DateFashion(int you, int date)
         {
-            throw new NotImplementedException();
+            if ((you >= 8 || date >= 8)&&(you > 2 && date > 2))
+            {
+                return 2;
+            }
+            else if(you > 2 && date > 2) 
+            {
+                return  1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -51,7 +72,18 @@ namespace Exercises.Level1
         /// </summary>
         public bool SquirrelPlay(int temp, bool isSummer)
         {
-            throw new NotImplementedException();
+            if (temp > 60 && temp <= 90)
+            {
+                return true;
+            }
+            else if (temp > 60 && temp <= 100 && isSummer)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -67,7 +99,18 @@ namespace Exercises.Level1
         /// </summary>
         public int CaughtSpeeding(int speed, bool isBirthday)
         {
-            throw new NotImplementedException();
+            if ((speed >60 && speed <= 80 && !isBirthday) || (speed >65 && speed <= 85))
+            {
+                return 1;
+            }
+            else if ((speed >= 81 && !isBirthday) || speed >= 86)
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
