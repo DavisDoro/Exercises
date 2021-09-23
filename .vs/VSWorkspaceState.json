@@ -4,8 +4,9 @@
     "\\Exercises",
     "\\Exercises\\Level1",
     "\\Exercises\\Level1\\Exercises.Level1",
-    "\\Exercises\\Level1\\Exercises.Level1.Tests"
+    "\\Exercises\\Level2",
+    "\\Exercises\\Level2\\Exercises.Level2"
   ],
-  "SelectedNode": "\\Exercises\\Level1\\Exercises.Level1\\Logic1.cs",
+  "SelectedNode": "\\Exercises\\Exercises.sln",
   "PreviewInSolutionExplorer": false
 }
