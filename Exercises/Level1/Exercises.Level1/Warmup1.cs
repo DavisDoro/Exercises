@@ -447,7 +447,7 @@ namespace Exercises.Level1
         {
             //remove beginning and end of the string
             string isDel = str.Remove(0, 1);
-            isDel = str.Remove(3);
+            isDel = str.Remove(4);
 
             //compare new string to "del"
             if (isDel == "del")
