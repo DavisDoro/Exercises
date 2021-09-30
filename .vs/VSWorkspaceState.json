@@ -4,8 +4,13 @@
     "\\Exercises",
     "\\Exercises\\Level1",
     "\\Exercises\\Level1\\Exercises.Level1",
-    "\\Exercises\\Level1\\Exercises.Level1.Tests"
+    "\\Exercises\\Level2",
+    "\\Exercises\\Level2\\Exercises.Level2"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\Exercises\\Level1\\Exercises.Level1\\Warmup1.cs",
+=======
+  "SelectedNode": "\\Exercises\\Exercises.sln",
+>>>>>>> 638fe14ed5c42e15877bbba04cc13e2918cf76e7
   "PreviewInSolutionExplorer": false
 }
