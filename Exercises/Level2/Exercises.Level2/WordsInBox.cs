@@ -18,7 +18,19 @@ namespace Exercises.Level2
         /// <returns></returns>
         public string[] GetBox(string word)
         {
-            throw new NotImplementedException();
+            var box = new string[3];
+            int stars = word.Length + 4;
+            string starLiner = "";
+
+            for (int i = 0; i < stars; i++)
+            {
+                starLiner += "*";
+            }
+            box[0] = starLiner;
+            box[1] = "* " + word + " *";
+            box[2] = starLiner;
+
+            return box;
         }
     }
 }

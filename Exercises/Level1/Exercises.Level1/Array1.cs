@@ -394,7 +394,13 @@ namespace Exercises.Level1
         /// </summary>
         public int[] SwapEnds(int[] nums)
         {
-            throw new NotImplementedException();
+            int temp = nums[^1];
+
+            nums[^1] = nums[0];
+            nums[0] = temp;
+
+            return nums;
+
         }
 
         /// <summary>
@@ -407,7 +413,10 @@ namespace Exercises.Level1
         /// </summary>
         public int[] MidThree(int[] nums)
         {
-            throw new NotImplementedException();
+            int midStart = (nums.Length - 1) / 2;
+            int[] midArray = new int[] { nums[midStart -1], nums[midStart], nums[midStart + 1] };
+
+            return midArray;
         }
 
         /// <summary>
@@ -420,7 +429,15 @@ namespace Exercises.Level1
         /// </summary>
         public int MaxTriple(int[] nums)
         {
-            throw new NotImplementedException();
+            int maxVal = 0;
+            int mid = (nums.Length - 1) / 2;
+            if (nums.Length == 1)
+            {
+                return nums[0];
+            }
+            maxVal = Math.Max(Math.Max(nums[0], nums[^1]), nums[mid]);
+
+            return maxVal;
         }
 
         /// <summary>
@@ -433,7 +450,13 @@ namespace Exercises.Level1
         /// </summary>
         public int[] FrontPiece(int[] nums)
         {
-            throw new NotImplementedException();
+            if (nums.Length < 3)
+            {
+                return nums;
+            }
+            int[] newNums = new int[] { nums[0], nums[1] };
+
+            return newNums;
         }
 
         /// <summary>
@@ -446,7 +469,31 @@ namespace Exercises.Level1
         /// </summary>
         public bool Unlucky1(int[] nums)
         {
-            throw new NotImplementedException();
+            if (nums.Length < 2)
+            {
+                return false;
+            }
+            int firstPair = nums[0] * 10 + nums[1];
+
+            if (nums.Length == 2 && firstPair == 13)
+            {
+                return true;
+            }
+            if (nums.Length == 2)
+            {
+                return false;
+            }
+            
+            int secondPair = nums[1] * 10 + nums[2];
+            int third = nums[^2] * 10 + nums[^1];
+            int forthPair = nums[^3] * 10 + nums[^2];
+
+            if (firstPair == 13 || secondPair == 13 || third == 13 || forthPair == 13)
+            {
+                return true;
+            }
+            return false;
+
         }
 
         /// <summary>
@@ -460,7 +507,24 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Make2(int[] a, int[] b)
         {
-            throw new NotImplementedException();
+            int[] c = new int[2];
+
+            if (a.Length > 1)
+            {
+                c[0] = a[0];
+                c[1] = a[1];
+            }
+            else if (a.Length == 1)
+            {
+                c[0] = a[0];
+                c[1] = b[0];
+            }
+            else
+            {
+                c[0] = b[0];
+                c[1] = b[1];
+            }
+            return c;
         }
 
         /// <summary>
@@ -473,7 +537,24 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Front11(int[] a, int[] b)
         {
-            throw new NotImplementedException();
+            int[] c = new int[0];
+            if (a.Length > 0 && b.Length > 0)
+            {
+                c = new int[] { a[0], b[0] };
+            }
+            else if (a.Length > 0 && b.Length == 0)
+            {
+                c = new int[] { a[0] };
+            }
+            else if (a.Length == 0 && b.Length >0)
+            {
+                c = new int[] { b[0] };
+            }
+            else
+            {
+                c = new int[0];
+            }
+            return c;
         }
     }
 }
