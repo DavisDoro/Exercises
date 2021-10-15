@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Exercises.Level1
 {
@@ -593,7 +594,19 @@ namespace Exercises.Level1
         /// </summary>
         public bool SameEnds(int[] nums, int val)
         {
-            throw new NotImplementedException();
+            var beginning = new int[val];
+            var end = new int[val];
+
+            for (int i = 0; i < val; i++)
+			{
+                beginning[i] = nums[i];
+			}
+            for (int i = 0; i < val; i++)
+			{
+                end[i] = nums[nums.Length - val + i];
+			}
+
+            return beginning.SequenceEqual(end);  //Using Linq for array compare
         }
 
         /// <summary>
@@ -606,7 +619,24 @@ namespace Exercises.Level1
         /// </summary>
         public bool TripleUp(int[] nums)
         {
-            throw new NotImplementedException();
+            int count = 0;
+
+            for (int i = 0; i < nums.Length-1; i++)
+            {
+                if (nums[i] + 1 == nums[i+1])
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 0;
+                }
+                if (count == 2)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>
@@ -621,7 +651,14 @@ namespace Exercises.Level1
         /// </summary>
         public int[] FizzArray3(int start, int end)
         {
-            throw new NotImplementedException();
+            var nums = new int[end - start];
+            int count = 0;
+            for (int i = start; i < end; i++)
+            {
+                nums[count] = i;
+                count++;
+            }
+            return nums;
         }
 
         /// <summary>
@@ -634,7 +671,19 @@ namespace Exercises.Level1
         /// </summary>
         public int[] ShiftLeft(int[] nums)
         {
-            throw new NotImplementedException();
+            if (nums.Length == 0)
+            {
+                return nums;
+            }
+
+            int end = nums[0];
+            for (int i = 0; i < nums.Length-1; i++)
+            {
+                nums[i] = nums[i + 1];
+            }
+            nums[^1] = end;
+
+            return nums;
         }
 
         /// <summary>
@@ -648,7 +697,28 @@ namespace Exercises.Level1
         /// </summary>
         public int[] TenRun(int[] nums)
         {
-            throw new NotImplementedException();
+            int tens = 0;
+
+            for (int i = 0; i < nums.Length-1; i++) //check if first element in array is 0 and next element has to be changed to 0
+            {
+                if (nums[i] == 0 && nums[i+1] < 10 )
+                {
+                    nums[i + 1] = 0;
+                }
+            }
+
+            for (int i = 0; i < nums.Length; i++)  //checks for tens and converts elements
+            {
+                if (nums[i] / 10 > tens)
+                {
+                    tens = nums[i] / 10;
+                }
+                if (tens > 0)
+                {
+                    nums[i] = tens * 10;
+                }
+            }
+            return nums;
         }
 
         /// <summary>
@@ -662,7 +732,14 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Pre4(int[] nums)
         {
-            throw new NotImplementedException();
+            int fourLoc = Array.IndexOf(nums, 4);
+            var newNums = new int[fourLoc];
+
+            for (int i = 0; i < newNums.Length; i++)
+            {
+                newNums[i] = nums[i];
+            }
+            return newNums;
         }
 
         /// <summary>
@@ -676,7 +753,23 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Post4(int[] nums)
         {
-            throw new NotImplementedException();
+            int fourLoc = 0;
+            
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 4)
+                {
+                    fourLoc = i;
+                }
+            }
+
+            var newNums = new int[nums.Length - fourLoc - 1];
+
+            for (int i = 0; i < newNums.Length; i++)
+            {
+                newNums[i] = nums[i + fourLoc +1];
+            }
+            return newNums;
         }
 
         /// <summary>
@@ -690,7 +783,14 @@ namespace Exercises.Level1
         /// </summary>
         public int[] NotAlone(int[] nums, int val)
         {
-            throw new NotImplementedException();
+            for (int i = 1; i < nums.Length-1; i++)
+            {
+                if (nums[i] == val && (nums[i] != nums[i - 1] && nums[i] != nums[i + 1]))
+                {
+                    nums[i] = Math.Max(nums[i - 1], nums[i + 1]);
+                }
+            }
+            return nums;
         }
 
         /// <summary>
@@ -705,7 +805,31 @@ namespace Exercises.Level1
         /// </summary>
         public int[] ZeroFront(int[] nums)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            var newNums = new int[nums.Length];
+
+            foreach (var item in nums) //count zeroes
+            {
+                if (item == 0)
+                {
+                    count++;
+                }
+            }
+            for (int i = 0; i < count; i++) //insert all zeroes in new array
+            {
+                newNums[i] = 0;
+            }
+
+            for (int i = 0; i < nums.Length; i++) // insert rest of the numbers
+            {
+                if (nums[i] != 0)
+                {
+                    newNums[count] = nums[i];
+                    count++;
+                }
+            }
+            
+            return newNums;
         }
 
         /// <summary>
