@@ -844,8 +844,32 @@ namespace Exercises.Level1
         /// </summary>
         public int[] WithoutTen(int[] nums)
         {
-            throw new NotImplementedException();
+            int countTens = 0;
+            int pos = 0;
+            var newNums = new int[nums.Length];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 10)  // find 10s count
+                {
+                    countTens++;
+                }
+                else
+                {
+                    newNums[pos] = nums[i]; // build new array without 10s
+                    pos++;
+                }
+            }
+            int regElements = nums.Length - countTens;
+
+            for (int i = 0; i < countTens; i++)
+            {
+                newNums[regElements + i] = 0; // and zeros at the end of new array
+            }
+            return newNums;
+
         }
+
 
         /// <summary>
         /// Return a version of the given array where each zero value in the array is replaced by the
@@ -858,7 +882,24 @@ namespace Exercises.Level1
         /// </summary>
         public int[] ZeroMax(int[] nums)
         {
-            throw new NotImplementedException();
+            int largeOddValue = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 0) // find zero
+                {
+                    largeOddValue = 0;
+
+                    for (int j = i; j < nums.Length; j++) 
+                    {
+                        if (nums[j] % 2 == 1 && nums[j] > largeOddValue) // find next odd number
+                        {
+                            largeOddValue = nums[j]; // make sure its the biggest odd number
+                        }
+                    }
+                    nums[i] = largeOddValue; // assign value
+                }
+            }
+            return nums;
         }
 
         /// <summary>
@@ -873,7 +914,25 @@ namespace Exercises.Level1
         /// </summary>
         public int[] EvenOdd(int[] nums)
         {
-            throw new NotImplementedException();
+            var newNums = new int[nums.Length];
+            int pos = 0;
+            foreach (var item in nums)
+            {
+                if (item % 2 == 0) // arrange EVENS add the beginning of new array
+                {
+                    newNums[pos] = item;
+                    pos++;
+                }
+            }
+            foreach (var item in nums)
+            {
+                if (item % 2 == 1)  // arrange ODDS at the end of new array
+                {
+                    newNums[pos] = item;
+                    pos++;
+                }
+            }
+            return newNums;
         }
 
         /// <summary>
@@ -892,7 +951,33 @@ namespace Exercises.Level1
         /// </summary>
         public string[] FizzBuzz(int start, int end)
         {
-            throw new NotImplementedException();
+            var fizzArray = new string[end - start];
+
+            for (int i = 0; i < fizzArray.Length; i++)
+            {
+                if (start % 3 == 0 & start % 5 == 0)
+                {
+                    fizzArray[i] = "FizzBuzz";
+                    start++;
+                }
+                else if (start % 3 == 0)
+                {
+                    fizzArray[i] = "Fizz";
+                    start++;
+                }
+                else if (start % 5 == 0)
+                {
+                    fizzArray[i] = "Buzz";
+                    start++;
+                }
+                else
+                {
+                    fizzArray[i] = start.ToString();
+                    start++;
+                }
+            }
+            return fizzArray;
+
         }
     }
 }
