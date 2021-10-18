@@ -803,29 +803,23 @@ namespace Exercises.Level1
         /// zeroFront([0, 1, 1, 0, 1]) → [0, 0, 1, 1, 1]
         /// zeroFront([1, 0]) → [0, 1]
         /// </summary>
-        public int[] ZeroFront(int[] nums)
+        public int[] ZeroFront(int[] nums) // ONE loop
         {
-            int count = 0;
+            int pos = 0;
+            int posEnd = 1;
             var newNums = new int[nums.Length];
 
-            foreach (var item in nums) //count zeroes
+            foreach (var item in nums) 
             {
                 if (item == 0)
                 {
-                    count++;
+                    newNums[pos] = 0; // insert zeroes in front of the array
+                    pos++;
                 }
-            }
-            for (int i = 0; i < count; i++) //insert all zeroes in new array
-            {
-                newNums[i] = 0;
-            }
-
-            for (int i = 0; i < nums.Length; i++) // insert rest of the numbers
-            {
-                if (nums[i] != 0)
+                if (item != 0)
                 {
-                    newNums[count] = nums[i];
-                    count++;
+                    newNums[^posEnd] = item; // insert numbers in end of the array
+                    posEnd++;
                 }
             }
             
@@ -842,29 +836,25 @@ namespace Exercises.Level1
         /// withoutTen([10, 2, 10]) → [2, 0, 0]
         /// withoutTen([1, 99, 10]) → [1, 99, 0]
         /// </summary>
-        public int[] WithoutTen(int[] nums)
+        public int[] WithoutTen(int[] nums)  // ONE loop
         {
-            int countTens = 0;
+
             int pos = 0;
+            int posEnd = 1;
             var newNums = new int[nums.Length];
 
             for (int i = 0; i < nums.Length; i++)
             {
                 if (nums[i] == 10)  // find 10s count
                 {
-                    countTens++;
+                    newNums[^posEnd] = 0; // add zero at the end of new array
+                    posEnd++;
                 }
                 else
                 {
                     newNums[pos] = nums[i]; // build new array without 10s
                     pos++;
                 }
-            }
-            int regElements = nums.Length - countTens;
-
-            for (int i = 0; i < countTens; i++)
-            {
-                newNums[regElements + i] = 0; // and zeros at the end of new array
             }
             return newNums;
 
@@ -912,24 +902,22 @@ namespace Exercises.Level1
         /// evenOdd([3, 3, 2]) → [2, 3, 3]
         /// evenOdd([2, 2, 2]) → [2, 2, 2]
         /// </summary>
-        public int[] EvenOdd(int[] nums)
+        public int[] EvenOdd(int[] nums) // ONE loop
         {
             var newNums = new int[nums.Length];
-            int pos = 0;
+            int posStart = 0;
+            int posEnd = 1;
             foreach (var item in nums)
             {
                 if (item % 2 == 0) // arrange EVENS add the beginning of new array
                 {
-                    newNums[pos] = item;
-                    pos++;
+                    newNums[posStart] = item;
+                    posStart++;
                 }
-            }
-            foreach (var item in nums)
-            {
                 if (item % 2 == 1)  // arrange ODDS at the end of new array
                 {
-                    newNums[pos] = item;
-                    pos++;
+                    newNums[^posEnd] = item;
+                    posEnd++;
                 }
             }
             return newNums;
